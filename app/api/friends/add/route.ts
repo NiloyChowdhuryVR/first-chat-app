@@ -51,7 +51,7 @@ try {
         return new Response('Already added this user',{status:400})
     }
 
-    db.sadd(`user:${idToAdd}:incoming_friend_requests`,session.user.id)
+    await db.sadd(`user:${idToAdd}:incoming_friend_requests`,session.user.id)
 
     return new Response('OK')
 } catch (error) {
