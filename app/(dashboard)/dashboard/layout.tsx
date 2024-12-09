@@ -21,7 +21,7 @@ const Layout = async ({children}:{children:ReactNode}) => {
   return (
     <div>
         <div>
-        <Link href="/dashboard "><p>LOGO IPSUM 3</p></Link>
+        <Link href="/dashboard "><p>LOGO IPSUM 4</p></Link>
         </div>
         <div>
           {/* <Image src={session.user.image || testImg} height={300} width={300} alt='Pic'/> */}
