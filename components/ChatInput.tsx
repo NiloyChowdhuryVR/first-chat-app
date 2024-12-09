@@ -13,8 +13,8 @@ const ChatInput = ({chatPartner,chatId}:{chatPartner:User,chatId:string}) => {
         // setIsLoading(true)
         try {
             // await new Promise((resolve) => setTimeout(resolve, 1000))
-            await axios.post('/api/message/send',{text:input,chatId})
             setInput('')
+            await axios.post('/api/message/send',{text:input,chatId})
             textareaRef.current?.focus()
         } catch (error) {
             return new Response(`an Error Occured : ${error} `)
