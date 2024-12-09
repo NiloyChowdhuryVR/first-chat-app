@@ -46,7 +46,7 @@ try {
         return new Response('Already added this user',{status:400})
     }
     
-        await pusherServer.trigger(toPusherKey(`user:${idToAdd}:incoming_friend_requests`),'incoming_friend_requests',{
+        pusherServer.trigger(toPusherKey(`user:${idToAdd}:incoming_friend_requests`),'incoming_friend_requests',{
             senderId: session.user.id,
             senderEmail: session.user.email
         })
