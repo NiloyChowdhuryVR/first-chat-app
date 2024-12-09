@@ -41,8 +41,8 @@ export async function POST(req:Request){
 
         const message = messageValidator.parse(messageData)
 
-        pusherServer.trigger(toPusherKey(`chat:${chatId}`),'incoming-message',message)
-        pusherServer.trigger(toPusherKey(`user:${friendId}:chats`),'new_message',message)
+        await pusherServer.trigger(toPusherKey(`chat:${chatId}`),'incoming-message',message)
+        await pusherServer.trigger(toPusherKey(`user:${friendId}:chats`),'new_message',message)
 
         //All valid, now send the message
         await db.zadd(`chat:${chatId}:messages`,{
