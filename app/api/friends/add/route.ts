@@ -58,6 +58,6 @@ try {
     if(error instanceof z.ZodError){
         return new Response('Invalid request payload!',{status:422})
     }
-    return new Response('Invalid Request',{status:400})
+    return new Response('Invalid Request Occured',{status:400})
 }
 }
